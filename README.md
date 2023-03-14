@@ -1,1 +1,1 @@
-# Terminal-Bash
+# Terminal-Linux
