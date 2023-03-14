@@ -1,0 +1,157 @@
+1) Посмотреть где я
+HP@WIN-P1HA7DMG192 MINGW64 ~ (master)
+$ pwd
+/c/Users/HP
+
+2) Создать папку
+HP@WIN-P1HA7DMG192 MINGW64 ~ (master)
+$ mkdir terminal_hw1
+
+3) Зайти в папку
+HP@WIN-P1HA7DMG192 MINGW64 ~ (master)
+$ cd terminal_hw1
+
+4) Создать 3 папки
+HP@WIN-P1HA7DMG192 MINGW64 ~/terminal_hw1 (master)
+$ mkdir 1 2 3
+
+5) Зайти в любоую папку
+HP@WIN-P1HA7DMG192 MINGW64 ~/terminal_hw1 (master)
+$ cd 3
+
+6) Создать 5 файлов (3 txt, 2 json)
+HP@WIN-P1HA7DMG192 MINGW64 ~/terminal_hw1/3 (master)
+$ touch f1.txt f2.txt f3.txt j3.josn j4.json
+
+7) Создать 3 папки
+HP@WIN-P1HA7DMG192 MINGW64 ~/terminal_hw1/3 (master)
+$ mkdir 4 5 6
+
+8. Вывести список содержимого папки
+HP@WIN-P1HA7DMG192 MINGW64 ~/terminal_hw1/3 (master)
+$ ls -la
+total 4
+drwxr-xr-x 1 HP 197121 0 Mar 14 02:48 ./
+drwxr-xr-x 1 HP 197121 0 Mar 14 02:47 ../
+drwxr-xr-x 1 HP 197121 0 Mar 14 02:48 4/
+drwxr-xr-x 1 HP 197121 0 Mar 14 02:48 5/
+drwxr-xr-x 1 HP 197121 0 Mar 14 02:48 6/
+-rw-r--r-- 1 HP 197121 0 Mar 14 02:48 f1.txt
+-rw-r--r-- 1 HP 197121 0 Mar 14 02:48 f2.txt
+-rw-r--r-- 1 HP 197121 0 Mar 14 02:48 f3.txt
+-rw-r--r-- 1 HP 197121 0 Mar 14 02:48 j3.josn
+-rw-r--r-- 1 HP 197121 0 Mar 14 02:48 j4.json
+
+9) + Открыть любой txt файл
+HP@WIN-P1HA7DMG192 MINGW64 ~/terminal_hw1/3 (master)
+$ vim f1.txt
+
+10) + написать туда что-нибудь, любой текст.
+Insert
+Salary1=1000
+Salary2=1500
+Salary3=2500
+Salary4=3000
+Salary5=4000
+
+11) + сохранить и выйти.
+Esc :wq
+
+12) Выйти из папки на уровень выше
+cd ..
+—
+13) переместить любые 2 файла, которые вы создали, в любую другую папку.
+HP@WIN-P1HA7DMG192 MINGW64 ~/terminal_hw1/3 (master)
+$ mv f2.txt f3.txt ../1
+
+14) скопировать любые 2 файла, которые вы создали, в любую другую папку.
+HP@WIN-P1HA7DMG192 MINGW64 ~/terminal_hw1/3 (master)
+$ cp f1.txt j4.json 5
+
+15) Найти файл по имени
+HP@WIN-P1HA7DMG192 MINGW64 ~/terminal_hw1/3 (master)
+$ find -name "f1.txt"
+./5/f1.txt
+./f1.txt
+
+16) просмотреть содержимое в реальном времени (команда grep) изучите как она работает.
+HP@WIN-P1HA7DMG192 MINGW64 ~/terminal_hw1/3 (master)
+$ grep -r Salary
+5/f1.txt:Salary1=1000
+5/f1.txt:Salary2=1500
+5/f1.txt:Salary3=2500
+5/f1.txt:Salary4=3000
+5/f1.txt:Salary5=4000
+f1.txt:Salary1=1000
+f1.txt:Salary2=1500
+f1.txt:Salary3=2500
+f1.txt:Salary4=3000
+f1.txt:Salary5=4000
+
+17) вывести несколько первых строк из текстового файла
+HP@WIN-P1HA7DMG192 MINGW64 ~/terminal_hw1/3 (master)
+$ head -n 2 f1.txt
+Salary1=1000
+Salary2=1500
+
+18) вывести несколько последних строк из текстового файла
+HP@WIN-P1HA7DMG192 MINGW64 ~/terminal_hw1/3 (master)
+$ tail -n 3 f1.txt
+Salary3=2500
+Salary4=3000
+Salary5=4000
+
+19) просмотреть содержимое длинного файла (команда less) изучите как она работает.
+HP@WIN-P1HA7DMG192 MINGW64 ~/terminal_hw1/3 (master)
+$ less f1.txt
+
+[1]+  Stopped                 less f1.txt
+
+20) вывести дату и время
+HP@WIN-P1HA7DMG192 MINGW64 ~/terminal_hw1/3 (master)
+$ date
+Tue Mar 14 02:56:47 UTC 2023
+
+1) Отправить http запрос на сервер.
+http://162.55.220.72:5005/terminal-hw-request
+
+HP@WIN-P1HA7DMG192 MINGW64 ~/terminal_hw1/3 (master)
+$ curl http://162.55.220.72:5005/terminal-hw-request
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   232  100   232    0     0   1064      0 --:--:-- --:--:-- --:--:--  1069<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<title>404 Not Found</title>
+<h1>Not Found</h1>
+<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>
+
+2) Написать скрипт который выполнит автоматически пункты 3, 4, 5, 6, 7, 8, 13
+#!/bin/bash
+
+mkdir 1 2 3
+cd 1
+touch 1.txt 2.txt 3.txt 4.json 5.json
+mkdir 7 8 9
+ls -la
+mv 1.txt 2.txt ../2
+
+exit 0
+
+HP@WIN-P1HA7DMG192 MINGW64 ~/terminal_hw1/3 (master)
+$ bash Scriptul.sh
+total 8
+drwxr-xr-x 1 HP 197121 0 Mar 14 03:07 .
+drwxr-xr-x 1 HP 197121 0 Mar 14 03:07 ..
+-rw-r--r-- 1 HP 197121 0 Mar 14 03:07 1.txt
+-rw-r--r-- 1 HP 197121 0 Mar 14 03:07 2.txt
+-rw-r--r-- 1 HP 197121 0 Mar 14 03:07 3.txt
+-rw-r--r-- 1 HP 197121 0 Mar 14 03:07 4.json
+-rw-r--r-- 1 HP 197121 0 Mar 14 03:07 5.json
+drwxr-xr-x 1 HP 197121 0 Mar 14 03:07 7
+drwxr-xr-x 1 HP 197121 0 Mar 14 03:07 8
+drwxr-xr-x 1 HP 197121 0 Mar 14 03:07 9
+
+
+
+
+
+
