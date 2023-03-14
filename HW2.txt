@@ -1,0 +1,274 @@
+
+1. Сделать папку dir_1
+HP@WIN-P1HA7DMG192 MINGW64 ~ (master)
+$ mkdir dir_1
+
+ 2. Зайти в папку dir_1
+HP@WIN-P1HA7DMG192 MINGW64 ~ (master)
+$ cd dir_1
+
+ 3. Создать папку inner_dir_1
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ mkdir inner_dir_1
+
+ 4. Посмотреть где ты находишься
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ pwd
+/c/Users/HP/dir_1
+
+ 5. Находясь в папке dir_1 создать пустой текстовый файл tf_1.txt
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ touch tf_1.txt
+
+ 6. Находясь в папке dir_1 через команду cat создать текстовый файл tf_2.txt со следующими строками:
+- the first 1
+- the second 2
+- the third 3
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ cat >> tf_2.txt
+the first 1
+the second 2
+the third 3
+
+ 7. Зайти в папку inner_dir_1
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ cd inner_dir_1
+
+ 8. Через cat сделать текстовый файл tf_3.txt  c любыми строками
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1/inner_dir_1 (master)
+$ cat >> tf_3.txt
+line1
+line2
+line3
+Line4
+Line5
+
+ 9. Через cat добавить в текстовый файл tf_3.txt строку “the second 2”
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1/inner_dir_1 (master)
+$ cat >> tf_3.txt
+the second 2
+
+ 10. Через cat добавить в текстовый файл tf_3.txt строку “the sec 2”
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1/inner_dir_1 (master)
+$ cat >> tf_3.txt
+the sec 2
+
+ 11. Через cat добавить в текстовый файл tf_2.txt строку “the sec 3”
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1/dir_1 (master)
+$ cat >> tf_.txt
+the sec 3
+
+ 12. Через cat добавить в текстовый файл tf_3.txt строку “the SeCoNd 2”
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1/inner_dir_1 (master)
+$ cat >> tf_3.txt
+the SeCoND 2
+
+ 13. Через cat добавить в текстовый файл tf_2.txt строку “the seConD 2”
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1/dir_1 (master)
+$ cat >> tf_.txt
+the seConD 2
+
+ 14. Сделать текстовый файл tf_4.txt в котором будет 15 строк.
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1/inner_dir_1 (master)
+$ cat >> tf_4.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+
+ 15. Сделать текстовый файл tF_5.txt в котором будет 13 строк.
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1/inner_dir_1 (master)
+$ cat >> tf_5.txt
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+
+ 16. Вывести список всех файлов в папке.
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1/inner_dir_1 (master)
+$ ls -l
+total 4
+-rw-r--r-- 1 HP 197121  61 Mar 14 03:26 tf3.txt
+-rw-r--r-- 1 HP 197121  11 Mar 14 03:22 tf_3.txt
+-rw-r--r-- 1 HP 197121 137 Mar 14 03:31 tf_4.txt
+-rw-r--r-- 1 HP 197121  30 Mar 14 03:32 tf_5.txt
+
+ 17. Выйти из папки inner_dir_1
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1/inner_dir_1 (master)
+$ cd ..
+
+ 18. Вывести содержимое файла tf_2.txt в терминал.
+ HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ cat tf_2.txt
+the first 1
+the second 2
+the sec 3
+
+19. Найти путь к файлу tf_4.txt
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ realpath tf_4.txt
+/c/Users/HP/dir_1/tf_4.txt
+
+ 20. Очистить файл tf_4.txt от содержимого без удаления самого файла.
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ echo > tf_4.txt
+
+ 21. Найти путь к файлам у которых есть  “tf” в названии.
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ find . -type f -name "*tf*"
+./inner_dir_1/tf3.txt
+./inner_dir_1/tf_3.txt
+./inner_dir_1/tf_4.txt
+./inner_dir_1/tf_5.txt
+./tf_1.txt
+./tf_2.txt
+./tf_4.txt
+
+ 22. Найти путь к файлам у которых есть  “tf” в названии и буквы в любом регистре.
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ find . -type f -iname "*tf*"
+./inner_dir_1/tf3.txt
+./inner_dir_1/tf_3.txt
+./inner_dir_1/tf_4.txt
+./inner_dir_1/tf_5.txt
+./tf_1.txt
+./tf_2.txt
+./tf_4.txt
+
+ 23. Найти строки в файлах где есть комбинация букв “sec” в текущей папке
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ grep -r "sec"
+inner_dir_1/tf3.txt:the second 2
+inner_dir_1/tf3.txt:the sec
+inner_dir_1/tf3.txt:the sec 3
+inner_dir_1/tf_3.txt:the second
+tf_2.txt:the second 2
+tf_2.txt:the sec 3
+
+ 24. Найти строки в файлах где есть комбинация букв “sec” в любом регистре в текущей папке
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ grep -i -r "sec"
+inner_dir_1/tf3.txt:the second 2
+inner_dir_1/tf3.txt:the sec
+inner_dir_1/tf3.txt:the sec 3
+inner_dir_1/tf_3.txt:the second
+tf_2.txt:the second 2
+tf_2.txt:the sec 3
+
+ 25. Найти строки в файлах где есть только комбинация букв “sec” в текущей папке
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ grep -r "sec" .
+./inner_dir_1/tf3.txt:the second 2
+./inner_dir_1/tf3.txt:the sec
+./inner_dir_1/tf3.txt:the sec 3
+./inner_dir_1/tf_3.txt:the second
+./tf_2.txt:the second 2
+./tf_2.txt:the sec 3
+
+ 26. Найти строки в файлах где есть только комбинация букв “sec” в любом регистре в текущей папке
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ grep -i -r "sec" .
+./inner_dir_1/tf3.txt:the second 2
+./inner_dir_1/tf3.txt:the sec
+./inner_dir_1/tf3.txt:the sec 3
+./inner_dir_1/tf_3.txt:the second
+./tf_2.txt:the second 2
+./tf_2.txt:the sec 3
+
+ 27. Найти строки в файлах где есть комбинация букв “second” в текущей папке
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ grep -r "second"
+inner_dir_1/tf3.txt:the second 2
+inner_dir_1/tf_3.txt:the second
+tf_2.txt:the second 2
+
+ 28. Найти строки в файлах где есть комбинация букв “second” в любом регистре в текущей папке
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ grep -r -i "second" .
+./inner_dir_1/tf3.txt:the second 2
+./inner_dir_1/tf_3.txt:the second
+./tf_2.txt:the second 2
+
+ 29. Найти строки в файлах где есть комбинация букв “second” во всех папках ниже уровнем
+$ grep -r -i "second"
+inner_dir_1/tf3.txt:the second 2
+inner_dir_1/tf_3.txt:the second
+tf_2.txt:the second 2
+
+ 30. Найти только путь и название файла в строках которых есть комбинация букв “second” в текущей папке
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ grep -r "second" .
+./inner_dir_1/tf_4.txt
+./inner_dir_1/tf_5.txt
+./tf_1.txt
+./tf_4.txt
+
+ 31. Найти все строки во всех файлах где нет комбинации “second”
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ grep -rL "second" .
+./inner_dir_1/tf_4.txt
+./inner_dir_1/tf_5.txt
+./tf_1.txt
+./tf_4.txt
+
+ 32. Найти только название и путь к файлам где нет комбинации “second”
+find . -type f -not -exec grep -q "second" 
+
+ 33. Вывести в терминал 4 последних строк любого текстового файла
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1/inner_dir_1 (master)
+$ tail -n 4 tf3.txt
+line5
+the second 2
+the sec
+the sec 3
+
+ 34. Вывести в терминал 4 первые строки любого текстового файла.
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1/inner_dir_1 (master)
+$ head -n 4 tf3.txt
+Line1
+Line2
+line3
+line4
+
+ 35. Команда в одну строку. Создать папку и создать текстовый файл с содержиммым.
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1/inner_dir_1 (master)
+$ mkdir ex_folder && echo "Ex text" > ex_folder/ex_file.txt
+
+ 36. Команда в одну строку. Переместить в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1/inner_dir_1 (master)
+$ grep -rlZ "sec" . | xargs -0 mv -t ../
+
+ 37. Команда в одну строку. Скопировать в любую одну папку текстовые файлы у которых в содержимом есть слово “sec”
+HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
+$ grep -rlZ "sec" . | xargs -0 cp -t ../
+
+ 38. Команда в одну строку. Найти все строки c “sec” во всех текстовых файлах, скопировать и вставить эти строки в один новый созданный текстовый файл.
+HP@WIN-P1HA7DMG192 MINGW64 ~ (master)
+$ grep -r "sec" . --include "*.txt" | tee output.txt
+
+ 39. Команда в одну строку. Удалить текстовые файлы у которых в содержимом есть слово “sec”
+HP@WIN-P1HA7DMG192 MINGW64 ~ (master)
+$ grep -rlZ "sec" . --include "*.txt" | xargs -0 rm
+
+ 40. Просто вывести в терминал строку “Good job!!”
+echo "Good job!!"
