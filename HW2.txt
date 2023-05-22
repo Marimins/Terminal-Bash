@@ -131,7 +131,7 @@ $ realpath tf_4.txt
 
  20. Очистить файл tf_4.txt от содержимого без удаления самого файла.
 HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
-$ echo > tf_4.txt
+$ > tf_4.txt
 
  21. Найти путь к файлам у которых есть  “tf” в названии.
 HP@WIN-P1HA7DMG192 MINGW64 ~/dir_1 (master)
